@@ -27,4 +27,9 @@ describe('light theme CSS coverage', () => {
     assertContains(':root[data-ptt-palette-theme="light"] .btn');
     assertContains(':root[data-ptt-palette-theme="light"] .search-bar .query');
   });
+
+  it('covers article polling status', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'background:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'color:');
+  });
 });

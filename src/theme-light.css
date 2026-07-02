@@ -117,6 +117,13 @@
   color: var(--pttp-link) !important;
 }
 
+:root[data-ptt-palette-theme="light"] #article-polling {
+  background: var(--pttp-surface-muted) !important;
+  border-top: 1px solid var(--pttp-line) !important;
+  color: var(--pttp-muted) !important;
+  padding: 0.75ex 1ex !important;
+}
+
 :root[data-ptt-palette-theme="light"] .board,
 :root[data-ptt-palette-theme="light"] .r-ent {
   background: var(--pttp-surface) !important;
