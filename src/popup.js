@@ -12,6 +12,10 @@ function normalizeTheme(value) {
 }
 
 function setStatus(message) {
+  if (!statusEl) {
+    return;
+  }
+
   statusEl.textContent = message;
 }
 
@@ -25,6 +29,11 @@ function setSelectedTheme(theme) {
 
 function getActiveTab(callback) {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (chrome.runtime.lastError) {
+      callback(undefined);
+      return;
+    }
+
     callback(tabs[0]);
   });
 }
