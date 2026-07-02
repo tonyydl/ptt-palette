@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PTT Palette</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup" aria-labelledby="popup-title">
+      <h1 id="popup-title">PTT Palette</h1>
+      <fieldset class="theme-control">
+        <legend>Theme</legend>
+        <label>
+          <input type="radio" name="theme" value="default">
+          <span>Default</span>
+        </label>
+        <label>
+          <input type="radio" name="theme" value="light">
+          <span>Light</span>
+        </label>
+      </fieldset>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
