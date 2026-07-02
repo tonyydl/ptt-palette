@@ -1,0 +1,13 @@
+{
+  "name": "ptt-palette",
+  "version": "0.1.0",
+  "description": "Chrome and Edge extension that gives PTT Web a readable light theme.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.3"
+  }
+}
