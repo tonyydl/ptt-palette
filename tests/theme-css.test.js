@@ -33,3 +33,24 @@ describe('light theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'color:');
   });
 });
+
+describe('tracker theme CSS coverage', () => {
+  it('defines the tracker theme root and office surface tokens', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"]', '--pttp-tracker-bg:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] body', 'background:');
+  });
+
+  it('turns article lists into issue-tracker rows', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'border:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .nrec', 'border-radius:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title a', 'color:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .meta', 'color:');
+  });
+
+  it('turns article pages into documents with comment threads', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #main-content', 'max-width:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .article-metaline', 'border-bottom:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .push', 'border-left:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #article-polling', 'background:');
+  });
+});

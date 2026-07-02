@@ -10,6 +10,7 @@ function createDocument() {
 it("normalizeTheme accepts supported theme values", () => {
   assert.equal(normalizeTheme("default"), "default");
   assert.equal(normalizeTheme("light"), "light");
+  assert.equal(normalizeTheme("tracker"), "tracker");
 });
 
 it("normalizeTheme defaults missing and invalid values", () => {
@@ -25,6 +26,14 @@ describe("applyTheme", () => {
     applyTheme(document, "light");
 
     assert.equal(document.documentElement.getAttribute(THEME_ATTRIBUTE), "light");
+  });
+
+  it("sets the tracker theme attribute", () => {
+    const document = createDocument();
+
+    applyTheme(document, "tracker");
+
+    assert.equal(document.documentElement.getAttribute(THEME_ATTRIBUTE), "tracker");
   });
 
   it("removes the theme attribute for default", () => {
@@ -58,6 +67,7 @@ describe("applyTheme", () => {
     const document = createDocument();
 
     assert.equal(applyTheme(document, "light"), "light");
+    assert.equal(applyTheme(document, "tracker"), "tracker");
     assert.equal(applyTheme(document, "bad-value"), "default");
   });
 });

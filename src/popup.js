@@ -1,5 +1,6 @@
 const DEFAULT_THEME = 'default';
 const LIGHT_THEME = 'light';
+const TRACKER_THEME = 'tracker';
 const STORAGE_KEY = 'theme';
 const MESSAGE_TYPE = 'PTT_PALETTE_SET_THEME';
 const PTT_BBS_URL_PREFIX = 'https://www.ptt.cc/bbs/';
@@ -8,7 +9,7 @@ const statusEl = document.querySelector('#status');
 const themeInputs = [...document.querySelectorAll('input[name="theme"]')];
 
 function normalizeTheme(value) {
-  return value === LIGHT_THEME ? LIGHT_THEME : DEFAULT_THEME;
+  return value === LIGHT_THEME || value === TRACKER_THEME ? value : DEFAULT_THEME;
 }
 
 function setStatus(message) {
