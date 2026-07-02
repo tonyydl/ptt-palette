@@ -1,0 +1,143 @@
+:root[data-ptt-palette-theme="light"] {
+  color-scheme: light;
+  --pttp-bg: #f6f7fb;
+  --pttp-surface: #ffffff;
+  --pttp-surface-muted: #eef2f7;
+  --pttp-text: #172033;
+  --pttp-muted: #667085;
+  --pttp-line: #d9e0ea;
+  --pttp-link: #1d4ed8;
+  --pttp-link-visited: #6d3bbd;
+  --pttp-accent: #0f766e;
+  --pttp-warning: #b45309;
+  --pttp-danger: #b91c1c;
+  --pttp-push: #0f766e;
+  --pttp-boo: #b91c1c;
+  --pttp-neutral: #64748b;
+}
+
+:root[data-ptt-palette-theme="light"] body {
+  background: var(--pttp-bg) !important;
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] a {
+  color: var(--pttp-link) !important;
+}
+
+:root[data-ptt-palette-theme="light"] a:visited {
+  color: var(--pttp-link-visited) !important;
+}
+
+:root[data-ptt-palette-theme="light"] #topbar,
+:root[data-ptt-palette-theme="light"] .bbs-screen,
+:root[data-ptt-palette-theme="light"] .bbs-content,
+:root[data-ptt-palette-theme="light"] #main-container {
+  background: var(--pttp-surface) !important;
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] #navigation-container,
+:root[data-ptt-palette-theme="light"] .action-bar,
+:root[data-ptt-palette-theme="light"] .r-list-container,
+:root[data-ptt-palette-theme="light"] .board-list,
+:root[data-ptt-palette-theme="light"] .article-metaline,
+:root[data-ptt-palette-theme="light"] .article-metaline-right {
+  background: var(--pttp-surface-muted) !important;
+  color: var(--pttp-text) !important;
+  border-color: var(--pttp-line) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .board,
+:root[data-ptt-palette-theme="light"] .r-ent {
+  background: var(--pttp-surface) !important;
+  border-bottom: 1px solid var(--pttp-line) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .board:hover,
+:root[data-ptt-palette-theme="light"] .r-ent:hover {
+  background: #edf5ff !important;
+}
+
+:root[data-ptt-palette-theme="light"] .board-name,
+:root[data-ptt-palette-theme="light"] .title,
+:root[data-ptt-palette-theme="light"] .article-meta-value {
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .board-class,
+:root[data-ptt-palette-theme="light"] .board-nuser,
+:root[data-ptt-palette-theme="light"] .board-title,
+:root[data-ptt-palette-theme="light"] .author,
+:root[data-ptt-palette-theme="light"] .date,
+:root[data-ptt-palette-theme="light"] .mark,
+:root[data-ptt-palette-theme="light"] .article-meta-tag {
+  color: var(--pttp-muted) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .nrec {
+  color: var(--pttp-accent) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .nrec .hl {
+  background: var(--pttp-accent) !important;
+  color: #ffffff !important;
+}
+
+:root[data-ptt-palette-theme="light"] .hl {
+  color: var(--pttp-warning) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .hl.f1,
+:root[data-ptt-palette-theme="light"] .f1 {
+  color: var(--pttp-danger) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .hl.f2,
+:root[data-ptt-palette-theme="light"] .f2 {
+  color: var(--pttp-accent) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .f3 {
+  color: #7c3aed !important;
+}
+
+:root[data-ptt-palette-theme="light"] .f4 {
+  color: #2563eb !important;
+}
+
+:root[data-ptt-palette-theme="light"] .f5,
+:root[data-ptt-palette-theme="light"] .f6 {
+  color: var(--pttp-warning) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push {
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push-tag {
+  color: var(--pttp-push) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push-userid {
+  color: var(--pttp-link) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push-content {
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push-ipdatetime {
+  color: var(--pttp-muted) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .push-tag:has(+ .push-userid) {
+  color: var(--pttp-push) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .richcontent,
+:root[data-ptt-palette-theme="light"] .warning-box {
+  background: var(--pttp-surface-muted) !important;
+  color: var(--pttp-text) !important;
+  border-color: var(--pttp-line) !important;
+}
