@@ -273,7 +273,7 @@
 
 :root[data-ptt-palette-theme="tracker"] #logo::after {
   color: var(--pttp-tracker-text) !important;
-  content: "Workspace";
+  content: "Office";
   font-weight: 700 !important;
   left: 10px !important;
   position: absolute !important;
@@ -333,11 +333,11 @@
 :root[data-ptt-palette-theme="tracker"] .r-ent {
   background: var(--pttp-tracker-surface) !important;
   border: 1px solid var(--pttp-tracker-line) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   box-sizing: border-box !important;
-  margin: 8px auto !important;
-  max-width: 1080px !important;
+  margin: 0 auto -1px !important;
+  max-width: 1120px !important;
   padding: 10px 14px !important;
 }
 
@@ -347,19 +347,19 @@
 }
 
 :root[data-ptt-palette-theme="tracker"] .nrec {
-  background: var(--pttp-tracker-pill) !important;
-  border-radius: 999px !important;
-  color: var(--pttp-tracker-pill-text) !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: var(--pttp-tracker-muted) !important;
   font-family: inherit !important;
   font-size: 12px !important;
   min-width: 42px !important;
-  padding: 2px 8px !important;
+  padding: 2px 8px 2px 0 !important;
   text-align: center !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .nrec .hl {
   background: transparent !important;
-  color: var(--pttp-tracker-pill-text) !important;
+  color: var(--pttp-tracker-link) !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .title {

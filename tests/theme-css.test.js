@@ -40,11 +40,17 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] body', 'background:');
   });
 
-  it('turns article lists into issue-tracker rows', () => {
+  it('turns article lists into plain office rows', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'border:');
-    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .nrec', 'border-radius:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'border-radius: 0');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'box-shadow: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .nrec', 'background: transparent');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title a', 'color:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .meta', 'color:');
+  });
+
+  it('uses a neutral office label instead of product-flavored branding', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'content: "Office"');
   });
 
   it('turns article pages into documents with comment threads', () => {
