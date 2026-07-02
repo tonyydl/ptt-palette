@@ -6,7 +6,7 @@
 2. Go to `chrome://extensions` or `edge://extensions`.
 3. Enable Developer mode.
 4. Select "Load unpacked".
-5. Choose the `ptt-palette` project folder.
+5. Choose the folder containing `manifest.json`; for this worktree, use `C:\Users\S2403004\code\workspace\ptt-palette\.worktrees\ptt-palette-extension`.
 6. Confirm the extension named `PTT Palette` appears without manifest errors.
 
 ## Test Pages
@@ -24,4 +24,4 @@
 - Opening another `/bbs/*` page applies Light automatically.
 - Selecting Default removes `data-ptt-palette-theme` from the document root.
 - Non-PTT pages do not receive PTT Palette styling.
-- No extension errors appear in the extension service worker, popup console, or page console during normal toggling.
+- No extension errors appear in extension details/errors, the popup console, or the page console during normal toggling.
