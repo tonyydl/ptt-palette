@@ -273,9 +273,14 @@
 
 :root[data-ptt-palette-theme="tracker"] #topbar #logo {
   color: transparent !important;
+  display: inline-block !important;
+  font-size: 0 !important;
+  height: 40px !important;
+  line-height: 40px !important;
   max-width: 132px !important;
   overflow: hidden !important;
   position: relative !important;
+  width: 120px !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #logo::after {

@@ -55,9 +55,12 @@ describe('tracker theme CSS coverage', () => {
 
   it('uses a neutral office label instead of product-flavored branding', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'color: transparent');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'font-size: 0');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'height: 40px');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'line-height: 40px');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'content: "Office"');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'display: block');
-    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'font-size:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'font-size: 16px');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #logo::after', 'top: 0');
   });
 
