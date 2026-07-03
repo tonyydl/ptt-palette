@@ -23,6 +23,8 @@ describe('light theme CSS coverage', () => {
 
   it('covers fixed top and board-list controls', () => {
     assertContains(':root[data-ptt-palette-theme="light"] #topbar-container');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] #logo', 'color: var(--pttp-text)');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] #logo', 'background: transparent');
     assertContains(':root[data-ptt-palette-theme="light"] #action-bar-container');
     assertContains(':root[data-ptt-palette-theme="light"] .btn');
     assertContains(':root[data-ptt-palette-theme="light"] .search-bar .query');

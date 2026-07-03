@@ -52,6 +52,11 @@
   color: var(--pttp-link) !important;
 }
 
+:root[data-ptt-palette-theme="light"] #logo {
+  background: transparent !important;
+  color: var(--pttp-text) !important;
+}
+
 :root[data-ptt-palette-theme="light"] #navigation-container,
 :root[data-ptt-palette-theme="light"] #action-bar-container,
 :root[data-ptt-palette-theme="light"] .action-bar,
