@@ -59,4 +59,15 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .push', 'border-left:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #article-polling', 'background:');
   });
+
+  it('supports compact density for office scanning', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .r-ent', 'padding:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .title', 'font-size:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] #main-content', 'line-height:');
+  });
+
+  it('can hide remaining PTT branding in office mode', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #logo', 'display: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #topbar .right', 'display: none');
+  });
 });

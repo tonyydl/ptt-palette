@@ -494,3 +494,36 @@
   border-color: var(--pttp-tracker-line) !important;
   color: var(--pttp-tracker-text) !important;
 }
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .r-ent {
+  padding: 6px 12px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .title {
+  font-size: 14px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .meta,
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .author,
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .date {
+  font-size: 11px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] #main-content {
+  line-height: 1.42 !important;
+  padding: 14px 18px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .push {
+  margin: 4px 0 !important;
+  padding: 4px 8px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #logo,
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #topbar .right {
+  display: none !important;
+}
+
+:root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #topbar {
+  padding-left: 10px !important;
+}

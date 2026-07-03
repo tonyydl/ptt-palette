@@ -34,7 +34,7 @@ h1 {
 .theme-control {
   display: grid;
   gap: 8px;
-  margin: 0;
+  margin: 0 0 10px;
   padding: 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -61,6 +61,11 @@ label:has(input:checked) {
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 600;
+}
+
+.toggle-control {
+  border: 1px solid var(--line);
+  background: var(--panel);
 }
 
 input {

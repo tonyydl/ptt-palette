@@ -10,4 +10,11 @@ describe('popup theme labels', () => {
     assert.match(html, /<span>Office<\/span>/);
     assert.doesNotMatch(html, /<span>Tracker<\/span>/);
   });
+
+  it('includes office-only controls for density and branding', () => {
+    assert.match(html, /name="density" value="comfortable"/);
+    assert.match(html, /name="density" value="compact"/);
+    assert.match(html, /id="hide-branding"/);
+    assert.match(html, /Hide PTT branding/);
+  });
 });
