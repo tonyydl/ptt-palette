@@ -280,6 +280,7 @@
   max-width: 132px !important;
   overflow: hidden !important;
   position: relative !important;
+  visibility: hidden !important;
   width: 120px !important;
 }
 
@@ -294,6 +295,7 @@
   line-height: 40px !important;
   position: absolute !important;
   top: 0 !important;
+  visibility: visible !important;
   white-space: nowrap !important;
 }
 
