@@ -31,6 +31,25 @@ function applyTheme(theme) {
   return DEFAULT_THEME;
 }
 
+function applyLogoText(theme) {
+  const logo = document.querySelector('#topbar #logo');
+
+  if (!logo) {
+    return;
+  }
+
+  if (!logo.dataset.pttPaletteOriginalText) {
+    logo.dataset.pttPaletteOriginalText = logo.textContent;
+  }
+
+  if (theme === TRACKER_THEME) {
+    logo.textContent = 'Office';
+    return;
+  }
+
+  logo.textContent = logo.dataset.pttPaletteOriginalText;
+}
+
 function applyPreferences(preferences) {
   const normalizedTheme = applyTheme(preferences.theme);
   const normalizedDensity = normalizeDensity(preferences.density);
@@ -46,6 +65,8 @@ function applyPreferences(preferences) {
   } else {
     document.documentElement.removeAttribute(BRANDING_ATTRIBUTE);
   }
+
+  applyLogoText(normalizedTheme);
 }
 
 function readStoredTheme() {

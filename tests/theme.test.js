@@ -15,6 +15,19 @@ function createDocument() {
   return new JSDOM("<!doctype html><html><body></body></html>").window.document;
 }
 
+function createPttDocument() {
+  return new JSDOM(`
+    <!doctype html>
+    <html>
+      <body>
+        <div id="topbar">
+          <a id="logo" href="/bbs/">批踢踢實業坊</a>
+        </div>
+      </body>
+    </html>
+  `).window.document;
+}
+
 it("normalizeTheme accepts supported theme values", () => {
   assert.equal(normalizeTheme("default"), "default");
   assert.equal(normalizeTheme("light"), "light");
@@ -117,5 +130,19 @@ describe("applyPreferences", () => {
     assert.equal(document.documentElement.hasAttribute(THEME_ATTRIBUTE), false);
     assert.equal(document.documentElement.hasAttribute(DENSITY_ATTRIBUTE), false);
     assert.equal(document.documentElement.hasAttribute(BRANDING_ATTRIBUTE), false);
+  });
+
+  it("renames the PTT logo in tracker mode and restores it outside tracker mode", () => {
+    const document = createPttDocument();
+    const logo = document.querySelector("#logo");
+
+    applyPreferences(document, { theme: "tracker" });
+
+    assert.equal(logo.textContent, "Office");
+    assert.equal(logo.dataset.pttPaletteOriginalText, "批踢踢實業坊");
+
+    applyPreferences(document, { theme: "light" });
+
+    assert.equal(logo.textContent, "批踢踢實業坊");
   });
 });

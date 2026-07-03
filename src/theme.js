@@ -31,6 +31,25 @@ export function applyTheme(documentRef, theme) {
   return DEFAULT_THEME;
 }
 
+function applyLogoText(documentRef, theme) {
+  const logo = documentRef.querySelector('#topbar #logo');
+
+  if (!logo) {
+    return;
+  }
+
+  if (!logo.dataset.pttPaletteOriginalText) {
+    logo.dataset.pttPaletteOriginalText = logo.textContent;
+  }
+
+  if (theme === TRACKER_THEME) {
+    logo.textContent = 'Office';
+    return;
+  }
+
+  logo.textContent = logo.dataset.pttPaletteOriginalText;
+}
+
 export function applyPreferences(documentRef, preferences = {}) {
   const normalizedTheme = applyTheme(documentRef, preferences.theme);
   const normalizedDensity = normalizeDensity(preferences.density);
@@ -47,6 +66,8 @@ export function applyPreferences(documentRef, preferences = {}) {
   } else {
     root.removeAttribute(BRANDING_ATTRIBUTE);
   }
+
+  applyLogoText(documentRef, normalizedTheme);
 
   return {
     theme: normalizedTheme,
