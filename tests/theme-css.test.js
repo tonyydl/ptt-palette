@@ -58,6 +58,8 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'font-size: 16px');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'height: 40px');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'line-height: 40px');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'padding: 0 10px');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'width: auto');
   });
 
   it('turns article pages into documents with comment threads', () => {

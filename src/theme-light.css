@@ -280,8 +280,9 @@
   line-height: 40px !important;
   max-width: 132px !important;
   overflow: hidden !important;
+  padding: 0 10px !important;
   position: relative !important;
-  width: 120px !important;
+  width: auto !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #topbar .board-label {
