@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { describe, it } from 'node:test';
 
 const html = readFileSync(new URL('../src/popup.html', import.meta.url), 'utf8');
+const popupJs = readFileSync(new URL('../src/popup.js', import.meta.url), 'utf8');
 
 describe('popup theme labels', () => {
   it('presents tracker mode as Office without changing the saved value', () => {
@@ -16,5 +17,13 @@ describe('popup theme labels', () => {
     assert.match(html, /name="density" value="compact"/);
     assert.match(html, /id="hide-branding"/);
     assert.match(html, /Hide PTT branding/);
+  });
+});
+
+describe('popup supported PTT pages', () => {
+  it('recognizes both board pages and age-confirmation pages as supported PTT surfaces', () => {
+    assert.match(popupJs, /https:\/\/www\.ptt\.cc\/bbs\//);
+    assert.match(popupJs, /https:\/\/www\.ptt\.cc\/ask\//);
+    assert.match(popupJs, /PTT_URL_PREFIXES\.some/);
   });
 });

@@ -225,6 +225,38 @@
   border-color: var(--pttp-line) !important;
 }
 
+:root[data-ptt-palette-theme="light"] .over18-notice {
+  background: var(--pttp-surface) !important;
+  border: 1px solid var(--pttp-line) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+  color: var(--pttp-text) !important;
+  line-height: 1.7 !important;
+  margin: 48px auto 16px !important;
+  max-width: 720px !important;
+  padding: 24px !important;
+}
+
+:root[data-ptt-palette-theme="light"] .over18-button-container {
+  margin: 12px auto !important;
+  max-width: 360px !important;
+}
+
+:root[data-ptt-palette-theme="light"] .btn-big {
+  background: var(--pttp-surface) !important;
+  border: 1px solid var(--pttp-line) !important;
+  border-radius: 8px !important;
+  color: var(--pttp-link) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  padding: 14px 18px !important;
+  width: 100% !important;
+}
+
+:root[data-ptt-palette-theme="light"] .btn-big:hover {
+  background: #edf5ff !important;
+  border-color: #b8c7dc !important;
+}
+
 :root[data-ptt-palette-theme="tracker"] {
   color-scheme: light;
   --pttp-tracker-bg: #f4f6f8;
@@ -518,6 +550,41 @@
   background: var(--pttp-tracker-muted-surface) !important;
   border-color: var(--pttp-tracker-line) !important;
   color: var(--pttp-tracker-text) !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .over18-notice {
+  background: var(--pttp-tracker-surface) !important;
+  border: 1px solid var(--pttp-tracker-line) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08) !important;
+  color: var(--pttp-tracker-text) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  line-height: 1.7 !important;
+  margin: 48px auto 16px !important;
+  max-width: 720px !important;
+  padding: 24px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .over18-button-container {
+  margin: 12px auto !important;
+  max-width: 360px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .btn-big {
+  background: var(--pttp-tracker-surface) !important;
+  border: 1px solid var(--pttp-tracker-line) !important;
+  border-radius: 8px !important;
+  color: var(--pttp-tracker-link) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-weight: 600 !important;
+  padding: 14px 18px !important;
+  width: 100% !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .btn-big:hover {
+  background: var(--pttp-tracker-pill) !important;
+  border-color: #b8c7dc !important;
+  color: var(--pttp-tracker-pill-text) !important;
 }
 
 :root[data-ptt-palette-theme="tracker"][data-ptt-palette-density="compact"] .r-ent {

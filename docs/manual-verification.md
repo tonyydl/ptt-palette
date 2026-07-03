@@ -13,6 +13,7 @@
 
 - `https://www.ptt.cc/bbs/index.html`
 - `https://www.ptt.cc/bbs/Gossiping/index.html`
+- `https://www.ptt.cc/ask/over18?from=%2Fbbs%2FGossiping%2Findex.html`
 - Any readable article URL under `https://www.ptt.cc/bbs/*/M.*.html`
 
 ## Checks
@@ -21,7 +22,7 @@
 - Default mode leaves PTT visually unchanged.
 - Selecting Light updates the current PTT page without reload.
 - Reloading the page preserves Light.
-- Opening another `/bbs/*` page applies Light automatically.
+- Opening another supported PTT page applies Light automatically.
 - Selecting Default removes `data-ptt-palette-theme` from the document root.
 - Non-PTT pages do not receive PTT Palette styling.
 - No extension errors appear in extension details/errors, the popup console, or the page console during normal toggling.

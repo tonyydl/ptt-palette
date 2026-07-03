@@ -36,6 +36,13 @@ describe('light theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'background:');
     assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'color:');
   });
+
+  it('covers age-confirmation pages', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .over18-notice', 'background:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .over18-notice', 'color:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .btn-big', 'background:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .btn-big', 'color:');
+  });
 });
 
 describe('tracker theme CSS coverage', () => {
@@ -95,5 +102,13 @@ describe('tracker theme CSS coverage', () => {
   it('can hide remaining PTT branding in office mode', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #logo', 'display: none');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"][data-ptt-palette-hide-branding="true"] #topbar .right', 'display: none');
+  });
+
+  it('turns age-confirmation pages into office confirmation panels', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .over18-notice', 'background: var(--pttp-tracker-surface)');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .over18-notice', 'border: 1px solid var(--pttp-tracker-line)');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .over18-button-container', 'max-width:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .btn-big', 'background: var(--pttp-tracker-surface)');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .btn-big:hover', 'background: var(--pttp-tracker-pill)');
   });
 });

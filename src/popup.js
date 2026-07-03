@@ -7,7 +7,7 @@ const STORAGE_KEY = 'theme';
 const DENSITY_STORAGE_KEY = 'density';
 const HIDE_BRANDING_STORAGE_KEY = 'hideBranding';
 const MESSAGE_TYPE = 'PTT_PALETTE_SET_THEME';
-const PTT_BBS_URL_PREFIX = 'https://www.ptt.cc/bbs/';
+const PTT_URL_PREFIXES = ['https://www.ptt.cc/bbs/', 'https://www.ptt.cc/ask/'];
 
 const statusEl = document.querySelector('#status');
 const themeInputs = [...document.querySelectorAll('input[name="theme"]')];
@@ -73,7 +73,7 @@ function getActiveTab(callback) {
 
 function sendPreferencesToActiveTab(preferences) {
   getActiveTab((tab) => {
-    if (!tab || !tab.id || !tab.url || !tab.url.startsWith(PTT_BBS_URL_PREFIX)) {
+    if (!tab || !tab.id || !tab.url || !PTT_URL_PREFIXES.some((prefix) => tab.url.startsWith(prefix))) {
       setStatus('Saved. Open a PTT page to see it.');
       return;
     }
