@@ -266,9 +266,14 @@
 }
 
 :root[data-ptt-palette-theme="tracker"] #topbar {
+  align-items: center !important;
   background: transparent !important;
   color: var(--pttp-tracker-muted) !important;
+  display: flex !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  gap: 8px !important;
+  min-height: 40px !important;
+  padding: 0 12px !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #topbar #logo {
@@ -282,6 +287,7 @@
   overflow: hidden !important;
   padding: 0 10px !important;
   position: relative !important;
+  margin-right: 4px !important;
   width: auto !important;
 }
 
@@ -292,10 +298,13 @@
 
 :root[data-ptt-palette-theme="tracker"] #topbar .board {
   color: var(--pttp-tracker-muted) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #topbar .right {
   color: var(--pttp-tracker-muted) !important;
+  margin-left: auto !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #main-container,
@@ -305,6 +314,13 @@
   background: var(--pttp-tracker-bg) !important;
   color: var(--pttp-tracker-text) !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .r-list-container {
+  box-sizing: border-box !important;
+  margin: 0 auto !important;
+  max-width: min(1180px, calc(100vw - 48px)) !important;
+  padding: 0 12px 24px !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] #action-bar-container,
@@ -343,7 +359,7 @@
   box-shadow: none !important;
   box-sizing: border-box !important;
   margin: 0 auto -1px !important;
-  max-width: 1120px !important;
+  max-width: none !important;
   padding: 10px 14px !important;
 }
 
@@ -372,6 +388,9 @@
   color: var(--pttp-tracker-text) !important;
   font-size: 15px !important;
   font-weight: 650 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .title a {

@@ -62,6 +62,23 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar #logo', 'width: auto');
   });
 
+  it('keeps the office topbar compact and aligned', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar', 'display: flex');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar', 'align-items: center');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar', 'gap: 8px');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar .board', 'font-size: 16px');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] #topbar .right', 'margin-left: auto');
+  });
+
+  it('gives office lists more horizontal room without card spacing', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-list-container', 'max-width:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-list-container', 'margin: 0 auto');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'max-width: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title', 'overflow: hidden');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title', 'text-overflow: ellipsis');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title', 'white-space: nowrap');
+  });
+
   it('turns article pages into documents with comment threads', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] #main-content', 'max-width:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .article-metaline', 'border-bottom:');
