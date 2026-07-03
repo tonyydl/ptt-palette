@@ -52,7 +52,9 @@
   color: var(--pttp-link) !important;
 }
 
-:root[data-ptt-palette-theme="light"] #logo {
+:root[data-ptt-palette-theme="light"] #topbar #logo,
+:root[data-ptt-palette-theme="light"] #topbar #logo:link,
+:root[data-ptt-palette-theme="light"] #topbar #logo:visited {
   background: transparent !important;
   color: var(--pttp-text) !important;
 }
