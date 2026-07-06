@@ -32,6 +32,13 @@ describe('light theme CSS coverage', () => {
     assertContains(':root[data-ptt-palette-theme="light"] .search-bar .query');
   });
 
+  it('covers category board lists', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .b-list-container', 'background:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .b-ent', 'background:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .b-ent', 'border-bottom:');
+    assertRuleContains(':root[data-ptt-palette-theme="light"] .b-ent:hover', 'background:');
+  });
+
   it('covers article polling status', () => {
     assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'background:');
     assertRuleContains(':root[data-ptt-palette-theme="light"] #article-polling', 'color:');
@@ -58,6 +65,14 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .nrec', 'background: transparent');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title a', 'color:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .meta', 'color:');
+  });
+
+  it('turns category board lists into plain office rows', () => {
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-list-container', 'max-width:');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent', 'border: 1px solid var(--pttp-tracker-line)');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent', 'box-shadow: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .board-name', 'font-weight: 700');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .board-title', 'white-space: nowrap');
   });
 
   it('uses a neutral office label instead of product-flavored branding', () => {

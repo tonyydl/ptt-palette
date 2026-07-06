@@ -137,8 +137,19 @@
   border-bottom: 1px solid var(--pttp-line) !important;
 }
 
+:root[data-ptt-palette-theme="light"] .b-list-container {
+  background: var(--pttp-surface-muted) !important;
+  color: var(--pttp-text) !important;
+}
+
+:root[data-ptt-palette-theme="light"] .b-ent {
+  background: var(--pttp-surface) !important;
+  border-bottom: 1px solid var(--pttp-line) !important;
+}
+
 :root[data-ptt-palette-theme="light"] .board:hover,
-:root[data-ptt-palette-theme="light"] .r-ent:hover {
+:root[data-ptt-palette-theme="light"] .r-ent:hover,
+:root[data-ptt-palette-theme="light"] .b-ent:hover {
   background: #edf5ff !important;
 }
 
@@ -355,6 +366,16 @@
   padding: 0 12px 24px !important;
 }
 
+:root[data-ptt-palette-theme="tracker"] .b-list-container {
+  background: var(--pttp-tracker-bg) !important;
+  box-sizing: border-box !important;
+  color: var(--pttp-tracker-text) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  margin: 0 auto !important;
+  max-width: min(1180px, calc(100vw - 48px)) !important;
+  padding: 0 12px 24px !important;
+}
+
 :root[data-ptt-palette-theme="tracker"] #action-bar-container,
 :root[data-ptt-palette-theme="tracker"] .action-bar,
 :root[data-ptt-palette-theme="tracker"] #navigation-container {
@@ -398,6 +419,50 @@
 :root[data-ptt-palette-theme="tracker"] .r-ent:hover {
   background: #fbfdff !important;
   border-color: #b8c7dc !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .b-ent {
+  background: var(--pttp-tracker-surface) !important;
+  border: 1px solid var(--pttp-tracker-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  margin: 0 auto -1px !important;
+  max-width: none !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .b-ent:hover {
+  background: #fbfdff !important;
+  border-color: #b8c7dc !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .b-ent .board {
+  align-items: center !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  color: var(--pttp-tracker-text) !important;
+  display: grid !important;
+  gap: 10px !important;
+  grid-template-columns: minmax(132px, 180px) 56px 72px minmax(0, 1fr) !important;
+  padding: 10px 14px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .board-name {
+  color: var(--pttp-tracker-text) !important;
+  font-weight: 700 !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .board-nuser,
+:root[data-ptt-palette-theme="tracker"] .board-class,
+:root[data-ptt-palette-theme="tracker"] .board-title {
+  color: var(--pttp-tracker-muted) !important;
+  font-family: inherit !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .board-title {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .nrec {

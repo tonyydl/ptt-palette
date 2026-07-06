@@ -21,9 +21,10 @@ describe('popup theme labels', () => {
 });
 
 describe('popup supported PTT pages', () => {
-  it('recognizes both board pages and age-confirmation pages as supported PTT surfaces', () => {
+  it('recognizes board, age-confirmation, and category pages as supported PTT surfaces', () => {
     assert.match(popupJs, /https:\/\/www\.ptt\.cc\/bbs\//);
     assert.match(popupJs, /https:\/\/www\.ptt\.cc\/ask\//);
+    assert.match(popupJs, /https:\/\/www\.ptt\.cc\/cls\//);
     assert.match(popupJs, /PTT_URL_PREFIXES\.some/);
   });
 });

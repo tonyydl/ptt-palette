@@ -7,7 +7,7 @@ const STORAGE_KEY = 'theme';
 const DENSITY_STORAGE_KEY = 'density';
 const HIDE_BRANDING_STORAGE_KEY = 'hideBranding';
 const MESSAGE_TYPE = 'PTT_PALETTE_SET_THEME';
-const PTT_URL_PREFIXES = ['https://www.ptt.cc/bbs/', 'https://www.ptt.cc/ask/'];
+const PTT_URL_PREFIXES = ['https://www.ptt.cc/bbs/', 'https://www.ptt.cc/ask/', 'https://www.ptt.cc/cls/'];
 
 const statusEl = document.querySelector('#status');
 const themeInputs = [...document.querySelectorAll('input[name="theme"]')];

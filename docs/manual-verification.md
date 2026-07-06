@@ -14,6 +14,7 @@
 - `https://www.ptt.cc/bbs/index.html`
 - `https://www.ptt.cc/bbs/Gossiping/index.html`
 - `https://www.ptt.cc/ask/over18?from=%2Fbbs%2FGossiping%2Findex.html`
+- `https://www.ptt.cc/cls/3652`
 - Any readable article URL under `https://www.ptt.cc/bbs/*/M.*.html`
 
 ## Checks

@@ -4,7 +4,7 @@
   "description": "Switch PTT Web pages between the default theme and a readable light theme.",
   "version": "0.1.0",
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://www.ptt.cc/bbs/*", "https://www.ptt.cc/ask/*"],
+  "host_permissions": ["https://www.ptt.cc/bbs/*", "https://www.ptt.cc/ask/*", "https://www.ptt.cc/cls/*"],
   "action": { "default_title": "PTT Palette", "default_popup": "src/popup.html" },
-  "content_scripts": [{ "matches": ["https://www.ptt.cc/bbs/*", "https://www.ptt.cc/ask/*"], "js": ["src/content.js"], "css": ["src/theme-light.css"], "run_at": "document_start" }]
+  "content_scripts": [{ "matches": ["https://www.ptt.cc/bbs/*", "https://www.ptt.cc/ask/*", "https://www.ptt.cc/cls/*"], "js": ["src/content.js"], "css": ["src/theme-light.css"], "run_at": "document_start" }]
 }
