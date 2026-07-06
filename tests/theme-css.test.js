@@ -71,7 +71,11 @@ describe('tracker theme CSS coverage', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-list-container', 'max-width:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent', 'border: 1px solid var(--pttp-tracker-line)');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent', 'box-shadow: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent .board > *', 'float: none');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent .board > *', 'min-width: 0');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .b-ent .board > *', 'width: auto');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .board-name', 'font-weight: 700');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .board-nuser', 'text-align: right');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .board-title', 'white-space: nowrap');
   });
 

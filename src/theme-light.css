@@ -447,9 +447,19 @@
   padding: 10px 14px !important;
 }
 
+:root[data-ptt-palette-theme="tracker"] .b-ent .board > * {
+  float: none !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
 :root[data-ptt-palette-theme="tracker"] .board-name {
   color: var(--pttp-tracker-text) !important;
   font-weight: 700 !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .board-nuser {
+  text-align: right !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .board-nuser,
