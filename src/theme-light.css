@@ -112,6 +112,10 @@
   border-color: #94a3b8 !important;
 }
 
+:root[data-ptt-palette-theme="light"] .r-list-container.action-bar-margin {
+  margin-top: 56px !important;
+}
+
 :root[data-ptt-palette-theme="light"] .article-menu.shown,
 :root[data-ptt-palette-theme="light"] .article-menu .dropdown {
   background: var(--pttp-surface) !important;
@@ -364,6 +368,10 @@
   margin: 0 auto !important;
   max-width: min(1180px, calc(100vw - 48px)) !important;
   padding: 0 12px 24px !important;
+}
+
+:root[data-ptt-palette-theme="tracker"] .r-list-container.action-bar-margin {
+  margin-top: 56px !important;
 }
 
 :root[data-ptt-palette-theme="tracker"] .b-list-container {

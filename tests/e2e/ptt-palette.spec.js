@@ -94,6 +94,18 @@ async function expectContainedHorizontally(innerLocator, outerLocator) {
   expect(innerBox.x + innerBox.width).toBeLessThanOrEqual(outerBox.x + outerBox.width + 1);
 }
 
+async function expectStackedAbove(upperLocator, lowerLocator) {
+  await expect(upperLocator).toBeVisible();
+  await expect(lowerLocator).toBeVisible();
+
+  const upperBox = await upperLocator.boundingBox();
+  const lowerBox = await lowerLocator.boundingBox();
+
+  expect(upperBox).toBeTruthy();
+  expect(lowerBox).toBeTruthy();
+  expect(upperBox.y + upperBox.height).toBeLessThanOrEqual(lowerBox.y);
+}
+
 test.describe.configure({ mode: 'serial' });
 
 test.beforeAll(async () => {
@@ -169,6 +181,8 @@ test('applies Office theme to board article lists', async ({}, testInfo) => {
   await expectReadableText(page.locator('#logo'));
 
   const firstRow = page.locator('.r-ent:has(.title a)').first();
+  await expectStackedAbove(page.locator('#action-bar-container'), page.locator('.search-bar .query'));
+  await expectStackedAbove(page.locator('.search-bar .query'), firstRow);
   await expect(firstRow).toBeVisible();
   await expect(firstRow.locator('.title')).toBeVisible();
   await expect(firstRow.locator('.meta')).toBeVisible();

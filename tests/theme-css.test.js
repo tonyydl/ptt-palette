@@ -99,6 +99,7 @@ describe('tracker theme CSS coverage', () => {
   it('gives office lists more horizontal room without card spacing', () => {
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-list-container', 'max-width:');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-list-container', 'margin: 0 auto');
+    assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-list-container.action-bar-margin', 'margin-top: 56px');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .r-ent', 'max-width: none');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title', 'overflow: hidden');
     assertRuleContains(':root[data-ptt-palette-theme="tracker"] .title', 'text-overflow: ellipsis');
