@@ -27,3 +27,11 @@
 - Selecting Default removes `data-ptt-palette-theme` from the document root.
 - Non-PTT pages do not receive PTT Palette styling.
 - No extension errors appear in extension details/errors, the popup console, or the page console during normal toggling.
+
+## Automated Browser Verification
+
+1. Run `npm run playwright:install` once to install Playwright's Chromium browser.
+2. Run `npm run test:e2e` to load the unpacked extension in Chromium and verify Office theme rendering on hot boards, category pages, and the over-18 confirmation page.
+3. Run `npm run test:all` before release-level changes.
+
+Playwright screenshots and traces are written under `test-results/` and are intentionally ignored by git.
