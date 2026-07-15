@@ -61,6 +61,39 @@ async function expectLightSurface(locator) {
   expect(background).not.toBe('rgba(0, 0, 0, 0)');
 }
 
+async function expectReadableText(locator) {
+  await expect(locator).toBeVisible();
+  const color = await locator.evaluate((element) => getComputedStyle(element).color);
+
+  expect(color).not.toBe('rgb(255, 255, 255)');
+  expect(color).not.toBe('rgba(255, 255, 255, 0)');
+}
+
+async function expectNoHorizontalOverlap(leftLocator, rightLocator) {
+  await expect(leftLocator).toBeVisible();
+  await expect(rightLocator).toBeVisible();
+
+  const leftBox = await leftLocator.boundingBox();
+  const rightBox = await rightLocator.boundingBox();
+
+  expect(leftBox).toBeTruthy();
+  expect(rightBox).toBeTruthy();
+  expect(leftBox.x + leftBox.width).toBeLessThanOrEqual(rightBox.x + 1);
+}
+
+async function expectContainedHorizontally(innerLocator, outerLocator) {
+  await expect(innerLocator).toBeVisible();
+  await expect(outerLocator).toBeVisible();
+
+  const innerBox = await innerLocator.boundingBox();
+  const outerBox = await outerLocator.boundingBox();
+
+  expect(innerBox).toBeTruthy();
+  expect(outerBox).toBeTruthy();
+  expect(innerBox.x).toBeGreaterThanOrEqual(outerBox.x - 1);
+  expect(innerBox.x + innerBox.width).toBeLessThanOrEqual(outerBox.x + outerBox.width + 1);
+}
+
 test.describe.configure({ mode: 'serial' });
 
 test.beforeAll(async () => {
@@ -99,14 +132,21 @@ test('applies Office theme to hot board rows without column overlap', async ({},
   await expect(page.locator('#logo')).toHaveText('Office');
 
   const firstRow = page.locator('.b-ent').first();
-  const userBox = await firstRow.locator('.board-nuser').boundingBox();
-  const classBox = await firstRow.locator('.board-class').boundingBox();
-
-  expect(userBox).toBeTruthy();
-  expect(classBox).toBeTruthy();
-  expect(userBox.x + userBox.width).toBeLessThanOrEqual(classBox.x);
+  await expectNoHorizontalOverlap(firstRow.locator('.board-nuser'), firstRow.locator('.board-class'));
 
   await page.screenshot({ path: testInfo.outputPath('hotboards-office.png'), fullPage: true });
+  await page.close();
+});
+
+test('applies Office theme to board directory pages', async ({}, testInfo) => {
+  const page = await openThemedPage('https://www.ptt.cc/bbs/index.html');
+
+  await expectLightSurface(page.locator('.b-list-container'));
+  await expect(page.locator('#logo')).toHaveText('Office');
+  await expectReadableText(page.locator('#logo'));
+  await expect(page.locator('.b-ent').first()).toBeVisible();
+
+  await page.screenshot({ path: testInfo.outputPath('bbs-index-office.png'), fullPage: true });
   await page.close();
 });
 
@@ -118,6 +158,37 @@ test('applies Office theme to category pages', async ({}, testInfo) => {
   await expect(page.locator('#logo')).toHaveText('Office');
 
   await page.screenshot({ path: testInfo.outputPath('cls-3652-office.png'), fullPage: true });
+  await page.close();
+});
+
+test('applies Office theme to board article lists', async ({}, testInfo) => {
+  const page = await openThemedPage('https://www.ptt.cc/bbs/Soft_Job/index.html');
+
+  await expectLightSurface(page.locator('.r-list-container'));
+  await expect(page.locator('#logo')).toHaveText('Office');
+  await expectReadableText(page.locator('#logo'));
+
+  const firstRow = page.locator('.r-ent:has(.title a)').first();
+  await expect(firstRow).toBeVisible();
+  await expect(firstRow.locator('.title')).toBeVisible();
+  await expect(firstRow.locator('.meta')).toBeVisible();
+  await expectContainedHorizontally(firstRow.locator('.title'), firstRow);
+
+  await page.screenshot({ path: testInfo.outputPath('soft-job-index-office.png'), fullPage: true });
+  await page.close();
+});
+
+test('applies Office theme to article pages', async ({}, testInfo) => {
+  const page = await openThemedPage('https://www.ptt.cc/bbs/Soft_Job/M.1749789764.A.83F.html');
+
+  await expectLightSurface(page.locator('#main-content'));
+  await expect(page.locator('#logo')).toHaveText('Office');
+  await expectReadableText(page.locator('#logo'));
+  await expect(page.locator('.article-metaline').first()).toBeVisible();
+  await expect(page.locator('.article-meta-tag').first()).toBeVisible();
+  await expect(page.locator('.article-meta-value').first()).toBeVisible();
+
+  await page.screenshot({ path: testInfo.outputPath('soft-job-article-office.png') });
   await page.close();
 });
 
